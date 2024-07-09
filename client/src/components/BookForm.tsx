@@ -42,7 +42,7 @@ const BookForm: React.FC = () => {
       <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} required fullWidth margin="normal" />
       <TextField label="Description" value={description} onChange={(e) => setDescription(e.target.value)} required fullWidth margin="normal" multiline rows={4} />
       <TextField label="Publish Date" type="date" value={publishDate} onChange={(e) => setPublishDate(e.target.value)} required fullWidth margin="normal" InputLabelProps={{ shrink: true }} />
-      <TextField label="Price" type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))} required fullWidth margin="normal" />
+      <TextField label="Price" type="number" value={price} onChange={(e) => setPrice(parseInt(e.target.value, 10))} inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} required fullWidth margin="normal" />
       <Button type="submit" variant="contained" color="primary">Add Book</Button>
     </Box>
   );
